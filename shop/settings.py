@@ -22,12 +22,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY') #'kkepa517d2ku@1=bkqbt(*q6##tv67bd(&*hty%w86($*k-_fn'
+SECRET_KEY = os.environ.get('SECRET_KEY')
+    #os.environ.get('SECRET_KEY')
+    #'kkepa517d2ku@1=bkqbt(*q6##tv67bd(&*hty%w86($*k-_fn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True #os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = ['loja-online-teste.herokuapp.com', 'localhost:8000']
+ALLOWED_HOSTS = []#['loja-online-teste.herokuapp.com', 'localhost:8000']
 
 # Application definition
 
@@ -137,7 +139,9 @@ MEDIA_ROOT = 'imagens'
 MEDIA_URL = '/media/'
 
 REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 16
 }
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
