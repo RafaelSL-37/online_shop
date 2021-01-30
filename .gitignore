@@ -5,4 +5,4 @@
 # Name of your virtuan env
 .venv
 *pyc
-imagens
+imagens/
