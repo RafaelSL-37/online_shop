@@ -27,7 +27,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
     #'kkepa517d2ku@1=bkqbt(*q6##tv67bd(&*hty%w86($*k-_fn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True #os.environ.get('DEBUG')
+DEBUG = os.environ.get('DEBUG')
+    #os.environ.get('DEBUG')
+    #True
 
 ALLOWED_HOSTS = ['loja-online-teste.herokuapp.com', 'localhost:8000']
 
